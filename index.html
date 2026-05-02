@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namkaran & Cradle Ceremony — RSVP</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Devanagari+font&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --saffron: #E8871A;
+    --saffron-light: #F5A847;
+    --saffron-pale: #FDF3E3;
+    --crimson: #B5292A;
+    --crimson-light: #D94040;
+    --gold: #C9920A;
+    --gold-light: #E8B84B;
+    --gold-pale: #FAF0D0;
+    --ivory: #FAF6EE;
+    --cream: #F5EDD8;
+    --maroon: #7A1C1C;
+    --green-leaf: #2D6A4F;
+    --green-pale: #D8F3DC;
+    --text-dark: #2C1810;
+    --text-mid: #5A3E2B;
+    --text-light: #8B6B50;
+    --border: rgba(201, 146, 10, 0.3);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    background-color: var(--ivory);
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* === DECORATIVE BACKGROUND === */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(232, 135, 26, 0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(181, 41, 42, 0.06) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='%23C9920A' opacity='0.15'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* === HEADER / HERO === */
+  .hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 3rem 1.5rem 2rem;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '🪷';
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    animation: floatBlosom 4s ease-in-out infinite;
+  }
+
+  @keyframes floatBlosom {
+    0%, 100% { transform: translateY(0px) rotate(-5deg); }
+    50% { transform: translateY(-8px) rotate(5deg); }
+  }
+
+  .divider-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .divider-line {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .divider-icon {
+    color: var(--gold);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+  }
+
+  .hero-subtitle-top {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--maroon);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  }
+
+  .hero-devanagari {
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    color: var(--crimson);
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--text-mid);
+    font-style: italic;
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.7;
+  }
+
+  /* === BABY INFO BANNER === */
+  .baby-banner {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto 2.5rem;
+    max-width: 600px;
+    background: linear-gradient(135deg, #FFFBF2 0%, #FDF3E3 50%, #FFFBF2 100%);
+    border: 1px solid var(--gold-light);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(201, 146, 10, 0.1);
+  }
+
+  .baby-banner::before,
+  .baby-banner::after {
+    content: '✦';
+    position: absolute;
+    color: var(--gold-light);
+    font-size: 1.5rem;
+    top: -0.75rem;
+  }
+
+  .baby-banner::before { left: 2rem; }
+  .baby-banner::after { right: 2rem; }
+
+  .event-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    font-weight: 400;
+  }
+
+  .event-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .event-icon { color: var(--saffron); }
+
+  /* === FORM CONTAINER === */
+  .form-container {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+  }
+
+  .form-card {
+    background: #FFFEF9;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem 2.5rem;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.04),
+      0 8px 32px rgba(201, 146, 10, 0.08),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold), var(--crimson), var(--gold), var(--saffron));
+  }
+
+  .corner-deco {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  .corner-deco.tl { top: 8px; left: 8px; }
+  .corner-deco.tr { top: 8px; right: 8px; transform: scaleX(-1); }
+  .corner-deco.bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+  .corner-deco.br { bottom: 8px; right: 8px; transform: scale(-1); }
+
+  .form-section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.9rem;
+    color: var(--maroon);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .form-section-title::before,
+  .form-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light));
+  }
+
+  .form-section-title::after {
+    background: linear-gradient(90deg, var(--gold-light), transparent);
+  }
+
+  .field-group { margin-bottom: 1.5rem; }
+
+  label {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    margin-bottom: 0.5rem;
+  }
+
+  .label-required { color: var(--crimson); margin-left: 2px; }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    background: #FEFCF7;
+    border: 1px solid rgba(201, 146, 10, 0.25);
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.2s ease;
+    -webkit-appearance: none;
+  }
+
+  input:focus {
+    border-color: var(--gold);
+    background: #FFFEF9;
+    box-shadow: 0 0 0 3px rgba(201, 146, 10, 0.1);
+  }
+
+  input::placeholder { color: var(--text-light); opacity: 0.6; font-style: italic; }
+
+  /* === COUNT STEPPER === */
+  .count-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .stepper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid rgba(201, 146, 10, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #FEFCF7;
+  }
+
+  .stepper-btn {
+    width: 44px;
+    height: 48px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    flex-shrink: 0;
+    font-family: sans-serif;
+    line-height: 1;
+  }
+
+  .stepper-btn:hover { background: rgba(201, 146, 10, 0.08); }
+  .stepper-btn:active { background: rgba(201, 146, 10, 0.15); }
+
+  .stepper-val {
+    flex: 1;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    -moz-appearance: textfield;
+  }
+
+  .stepper-val::-webkit-outer-spin-button,
+  .stepper-val::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+  /* === FOOD TOGGLE === */
+  .food-toggle-wrap {
+    background: #F7F0E4;
+    border: 1px solid rgba(201, 146, 10, 0.2);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .food-toggle-hint {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .food-toggle-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .food-toggle-btn {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .food-toggle-btn input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .food-toggle-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.1rem 0.75rem 0.9rem;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    background: white;
+    transition: all 0.22s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .food-toggle-btn:hover .food-toggle-inner {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+  }
+
+  .food-toggle-emoji {
+    font-size: 2rem;
+    line-height: 1;
+    display: block;
+  }
+
+  .food-toggle-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: color 0.2s;
+  }
+
+  .food-toggle-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.65rem;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+    text-align: center;
+    transition: color 0.2s;
+  }
+
+  .food-tick {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(201,146,10,0.3);
+    background: #F7F0E4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    margin-top: 0.25rem;
+  }
+
+  .food-tick svg { display: none; }
+
+  /* VEG checked */
+  .food-toggle-btn.veg input:checked ~ .food-toggle-inner {
+    border-color: var(--green-leaf);
+    background: #EDFAF3;
+  }
+
+  .food-toggle-btn.veg input:checked ~ .food-toggle-inner .food-toggle-name { color: var(--green-leaf); }
+  .food-toggle-btn.veg input:checked ~ .food-toggle-inner .food-toggle-sub { color: #4a9a72; }
+  .food-toggle-btn.veg input:checked ~ .food-toggle-inner .food-tick {
+    background: var(--green-leaf);
+    border-color: var(--green-leaf);
+  }
+
+  /* NON-VEG checked */
+  .food-toggle-btn.nonveg input:checked ~ .food-toggle-inner {
+    border-color: var(--crimson);
+    background: #FFF2F2;
+  }
+
+  .food-toggle-btn.nonveg input:checked ~ .food-toggle-inner .food-toggle-name { color: var(--crimson); }
+  .food-toggle-btn.nonveg input:checked ~ .food-toggle-inner .food-toggle-sub { color: #c44040; }
+  .food-toggle-btn.nonveg input:checked ~ .food-toggle-inner .food-tick {
+    background: var(--crimson);
+    border-color: var(--crimson);
+  }
+
+  .food-toggle-btn input:checked ~ .food-toggle-inner .food-tick svg { display: block; }
+
+  /* === TEXTAREA === */
+  textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    background: #FEFCF7;
+    border: 1px solid rgba(201, 146, 10, 0.25);
+    border-radius: 10px;
+    outline: none;
+    resize: vertical;
+    min-height: 80px;
+    transition: all 0.2s ease;
+    line-height: 1.6;
+  }
+
+  textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 146, 10, 0.1);
+  }
+
+  /* === SUBMIT BUTTON === */
+  .submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--crimson) 100%);
+    color: #FFF8EC;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 20px rgba(232, 135, 26, 0.3);
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(232, 135, 26, 0.4);
+  }
+
+  .submit-btn:active { transform: translateY(0); }
+
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: rgba(255,255,255,0.15);
+    transform: skewX(-20deg);
+    transition: left 0.4s ease;
+  }
+
+  .submit-btn:hover::before { left: 120%; }
+
+  .submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* === SUCCESS STATE === */
+  .success-card {
+    display: none;
+    text-align: center;
+    padding: 3rem 2rem;
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .success-icon { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+
+  .success-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.4rem;
+    color: var(--maroon);
+    margin-bottom: 0.75rem;
+  }
+
+  .success-msg {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    font-style: italic;
+    line-height: 1.7;
+    max-width: 380px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .success-summary {
+    background: var(--gold-pale);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    text-align: left;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .success-summary p { margin-bottom: 0.35rem; }
+  .success-summary strong { color: var(--maroon); }
+
+  /* === ERROR MESSAGE === */
+  .error-msg {
+    display: none;
+    background: #FFF0F0;
+    border: 1px solid rgba(181, 41, 42, 0.3);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    color: var(--crimson);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  /* === FOOTER === */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 0.06em;
+    opacity: 0.7;
+  }
+
+  /* === SETUP BANNER === */
+  .setup-notice {
+    background: linear-gradient(135deg, #FFF8E8, #FEF3D5);
+    border: 1px solid var(--gold-light);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .setup-notice strong {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 0.35rem;
+  }
+
+  .setup-notice code {
+    background: rgba(201, 146, 10, 0.12);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.78rem;
+    color: var(--maroon);
+    word-break: break-all;
+  }
+
+  /* LOADING spinner */
+  .spinner {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (max-width: 520px) {
+    .form-card { padding: 1.75rem 1.25rem; }
+    .count-row { grid-template-columns: 1fr 1fr; }
+    .food-options { grid-template-columns: 1fr; }
+    .attendance-options { grid-template-columns: 1fr 1fr; }
+    .hero-title { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="divider-top">
+    <div class="divider-line"></div>
+    <span class="divider-icon">✦ ✦ ✦</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <p class="hero-subtitle-top">You are cordially invited to</p>
+  <h1 class="hero-title">Naming <br>&amp;<br>Cradle Ceremony</h1>
+  <p class="hero-desc">
+    As we celebrate the sacred naming and first cradle swing of our little one,
+    we joyfully request the honour of your presence.
+  </p>
+
+  <div class="divider-top">
+    <div class="divider-line"></div>
+    <span class="divider-icon">🌸</span>
+    <div class="divider-line"></div>
+  </div>
+</div>
+
+<!-- BABY BANNER -->
+<div class="baby-banner">
+  <div class="event-details">
+    <div class="event-detail-item">
+      <span class="event-icon">📅</span>
+      <span>Saturday, May 10 &nbsp;·&nbsp; 6:00 PM</span>
+    </div>
+    <div class="event-detail-item">
+      <span class="event-icon">📍</span>
+      <span>548 Borbridge Avenue</span>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="form-container">
+
+  <!-- SETUP NOTICE -->
+  <div class="setup-notice" id="setupNotice">
+    <strong>⚙️ One-time Setup Required</strong>
+    To save responses to Google Sheets, replace <code>YOUR_APPS_SCRIPT_URL_HERE</code> in this file's JavaScript with your Google Apps Script deployment URL.
+    See the instructions in the downloaded file's comments.
+  </div>
+
+  <div class="form-card">
+    <!-- corner decorations -->
+    <svg class="corner-deco tl" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 55 Q5 5 55 5" stroke="#C9920A" stroke-width="1.5" fill="none"/>
+      <path d="M5 45 Q5 5 45 5" stroke="#C9920A" stroke-width="1" fill="none"/>
+      <circle cx="5" cy="55" r="3" fill="#C9920A"/>
+    </svg>
+    <svg class="corner-deco tr" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 55 Q5 5 55 5" stroke="#C9920A" stroke-width="1.5" fill="none"/>
+      <path d="M5 45 Q5 5 45 5" stroke="#C9920A" stroke-width="1" fill="none"/>
+      <circle cx="5" cy="55" r="3" fill="#C9920A"/>
+    </svg>
+    <svg class="corner-deco bl" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 55 Q5 5 55 5" stroke="#C9920A" stroke-width="1.5" fill="none"/>
+      <path d="M5 45 Q5 5 45 5" stroke="#C9920A" stroke-width="1" fill="none"/>
+      <circle cx="5" cy="55" r="3" fill="#C9920A"/>
+    </svg>
+    <svg class="corner-deco br" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 55 Q5 5 55 5" stroke="#C9920A" stroke-width="1.5" fill="none"/>
+      <path d="M5 45 Q5 5 45 5" stroke="#C9920A" stroke-width="1" fill="none"/>
+      <circle cx="5" cy="55" r="3" fill="#C9920A"/>
+    </svg>
+
+    <!-- FORM CONTENT -->
+    <div id="formContent">
+      <p class="form-section-title">Your RSVP</p>
+
+      <form id="rsvpForm" novalidate>
+
+        <!-- NAME -->
+        <div class="field-group">
+          <label for="guestName">Guest Name <span class="label-required">*</span></label>
+          <input type="text" id="guestName" name="guestName" placeholder="Your full name" required autocomplete="name">
+        </div>
+
+        <!-- GUEST COUNT -->
+        <div class="field-group" id="guestCountSection">
+          <label>Number of Guests</label>
+          <div class="count-row">
+            <div>
+              <label style="margin-bottom:0.4rem;">👨‍👩‍👧 Adults</label>
+              <div class="stepper">
+                <button type="button" class="stepper-btn" onclick="changeCount('adults', -1)">−</button>
+                <input type="number" class="stepper-val" id="adults" name="adults" value="1" min="0" max="20" readonly>
+                <button type="button" class="stepper-btn" onclick="changeCount('adults', 1)">+</button>
+              </div>
+            </div>
+            <div>
+              <label style="margin-bottom:0.4rem;">👶 Children</label>
+              <div class="stepper">
+                <button type="button" class="stepper-btn" onclick="changeCount('kids', -1)">−</button>
+                <input type="number" class="stepper-val" id="kids" name="kids" value="0" min="0" max="20" readonly>
+                <button type="button" class="stepper-btn" onclick="changeCount('kids', 1)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOD PREFERENCE -->
+        <div class="field-group" id="foodSection">
+          <label>Food Preference <span class="label-required">*</span></label>
+          <div class="food-toggle-wrap">
+            <p class="food-toggle-hint">Tap to select — choose one or both for mixed families</p>
+            <div class="food-toggle-row">
+
+              <label class="food-toggle-btn veg">
+                <input type="checkbox" id="foodVeg" name="foodVeg" value="Veg / Vegan">
+                <div class="food-toggle-inner">
+                  <span class="food-toggle-emoji">🥗</span>
+                  <span class="food-toggle-name">Vegetarian</span>
+                  <span class="food-toggle-sub">Veg &amp; Vegan options</span>
+                  <span class="food-tick">
+                    <svg width="11" height="9" viewBox="0 0 11 9" fill="none">
+                      <path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </label>
+
+              <label class="food-toggle-btn nonveg">
+                <input type="checkbox" id="foodNonVeg" name="foodNonVeg" value="Non-Vegetarian">
+                <div class="food-toggle-inner">
+                  <span class="food-toggle-emoji">🍗</span>
+                  <span class="food-toggle-name">Non-Vegetarian</span>
+                  <span class="food-toggle-sub">Meat &amp; fish options</span>
+                  <span class="food-tick">
+                    <svg width="11" height="9" viewBox="0 0 11 9" fill="none">
+                      <path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </label>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- MESSAGE -->
+        <div class="field-group">
+          <label>Blessings &amp; Wishes <span style="opacity:0.5; font-weight:300;">(optional)</span></label>
+          <textarea id="message" name="message" placeholder="Write your heartfelt blessings for the little one…"></textarea>
+        </div>
+
+        <!-- ERROR -->
+        <div class="error-msg" id="errorMsg">Please fill in all required fields before submitting.</div>
+
+        <!-- SUBMIT -->
+        <button type="submit" class="submit-btn" id="submitBtn">
+          🪔 &nbsp; Send My RSVP
+        </button>
+      </form>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-card" id="successCard">
+      <span class="success-icon">🎊</span>
+      <h2 class="success-title">ధన్యవాదాలు</h2>
+      <p class="success-msg">Your RSVP has been received with love and gratitude. We look forward to celebrating with you!</p>
+      <div class="success-summary" id="successSummary"></div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  🪷 &nbsp; With love &amp; blessings &nbsp; 🪷
+</footer>
+
+<script>
+  // ============================================================
+  // CONFIGURATION
+  // Replace the URL below with your Google Apps Script Web App URL.
+  //
+  // SETUP STEPS:
+  // 1. Open Google Sheets → Extensions → Apps Script
+  // 2. Paste the Apps Script code from the bottom of this file
+  // 3. Click Deploy → New Deployment → Web App
+  //    - Execute as: Me
+  //    - Who has access: Anyone
+  // 4. Copy the deployment URL and paste it below
+  // ============================================================
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyU3vg-lDVxrNwPRxXqIyPXd4iOmRi5i6fw8xHauKVUSNA5lfwlNnBicoqmkHL2hguo/exec';
+
+  // Hide setup notice if URL is configured
+  if (APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL_HERE') {
+    document.getElementById('setupNotice').style.display = 'none';
+  }
+
+  // === STEPPER ===
+  function changeCount(field, delta) {
+    const input = document.getElementById(field);
+    const val = parseInt(input.value) || 0;
+    const next = Math.max(0, Math.min(20, val + delta));
+    input.value = next;
+  }
+
+  // === FORM SUBMIT ===
+  document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const errorMsg = document.getElementById('errorMsg');
+    errorMsg.style.display = 'none';
+
+    const name = document.getElementById('guestName').value.trim();
+    const foodVeg = document.getElementById('foodVeg').checked;
+    const foodNonVeg = document.getElementById('foodNonVeg').checked;
+    const adults = document.getElementById('adults').value;
+    const kids = document.getElementById('kids').value;
+    const message = document.getElementById('message').value.trim();
+
+    if (!name) {
+      errorMsg.textContent = 'Please enter your name.';
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    if (!foodVeg && !foodNonVeg) {
+      errorMsg.textContent = 'Please select at least one food preference.';
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span> Sending Blessings…';
+
+    const foodChoices = [];
+    if (foodVeg) foodChoices.push('Veg / Vegan');
+    if (foodNonVeg) foodChoices.push('Non-Vegetarian');
+
+    const payload = {
+      timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+      name,
+      adults,
+      kids,
+      food: foodChoices.join(' & '),
+      message
+    };
+
+    try {
+      if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+        // Demo mode — simulate success
+        await new Promise(r => setTimeout(r, 1200));
+        showSuccess(payload);
+      } else {
+        await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        showSuccess(payload);
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.innerHTML = '🪔 &nbsp; Send My RSVP';
+      errorMsg.textContent = 'Something went wrong. Please try again.';
+      errorMsg.style.display = 'block';
+    }
+  });
+
+  function showSuccess(data) {
+    document.getElementById('formContent').style.display = 'none';
+    const sc = document.getElementById('successCard');
+    sc.style.display = 'block';
+
+    const totalGuests = parseInt(data.adults) + parseInt(data.kids);
+    const summaryEl = document.getElementById('successSummary');
+    summaryEl.innerHTML = `
+      <p><strong>Name:</strong> ${data.name}</p>
+      <p><strong>Total Guests:</strong> ${totalGuests} (${data.adults} adults, ${data.kids} children)</p>
+      <p><strong>Food Preference:</strong> ${data.food}</p>
+      ${data.message ? `<p><strong>Message:</strong> ${data.message}</p>` : ''}
+    `;
+  }
+</script>
+
+<!--
+================================================================
+GOOGLE APPS SCRIPT CODE
+================================================================
+Copy everything between the dashes below and paste it into your
+Google Apps Script editor (Extensions > Apps Script in Sheets).
+
+-------------------------------------------------------------------
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+    // Add header row if sheet is empty
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow([
+        'Timestamp',
+        'Guest Name',
+        'Attendance',
+        'Adults',
+        'Children',
+        'Total Guests',
+        'Food Preference',
+        'Blessings / Message'
+      ]);
+
+      // Style header row
+      var header = sheet.getRange(1, 1, 1, 8);
+      header.setBackground('#7A1C1C');
+      header.setFontColor('#FFFFFF');
+      header.setFontWeight('bold');
+    }
+
+    var data = JSON.parse(e.postData.contents);
+    var totalGuests = (parseInt(data.adults) || 0) + (parseInt(data.kids) || 0);
+
+    sheet.appendRow([
+      data.timestamp || new Date().toLocaleString(),
+      data.name || '',
+      data.attendance || '',
+      parseInt(data.adults) || 0,
+      parseInt(data.kids) || 0,
+      totalGuests,
+      data.food || 'N/A',
+      data.message || ''
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'success' }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch(err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'error', message: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+-------------------------------------------------------------------
+================================================================
+-->
+</body>
+</html>
